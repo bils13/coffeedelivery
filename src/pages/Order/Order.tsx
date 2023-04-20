@@ -1,6 +1,6 @@
 import React from "react";
 import { Header } from "../../components/Header/Header.style";
-import { YourOrder } from "./Order.style";
+import { Wrapper, YourOrder, Title } from "./Order.style";
 import { FormOrder } from "../../components/Form/Form";
 import { Payment } from "../../components/Payment/Payment";
 import { CoffeeSelected } from "../../components/CoffeeSelected/CoffeeSelected";
@@ -11,11 +11,15 @@ export const Order = () => {
         <React.Fragment>
             <Header />
             <YourOrder>
-                <h1>Complete seu pedido</h1>
-                <FormOrder />
-                <Payment />
-                <h1>Cafés selecionados</h1>
-                <ConfirmOrder />
+                <Wrapper>
+                    <Title>Complete seu pedido</Title>
+                    <FormOrder />
+                    <Payment />
+                </Wrapper>
+                <Wrapper>
+                    <Title>Cafés selecionados</Title>
+                    <ConfirmOrder />
+                </Wrapper>
             </YourOrder>
         </React.Fragment>
     )

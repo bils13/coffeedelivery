@@ -38,3 +38,25 @@ export const Title = styled.h4`
         color: #403937;
     }
 `
+
+export const Button = styled.button`
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    padding: 12px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    background: #DBAC2C;
+    border-radius: 6px;
+    border: none;
+    margin-top: 1rem;
+    
+    &:hover {
+        cursor: pointer;
+        background-color: #c08f2c;
+    }
+`

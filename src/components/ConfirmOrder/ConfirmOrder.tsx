@@ -1,5 +1,5 @@
 import React from 'react'
-import { Title, Wrapper } from './ConfirmOrder.Style'
+import { Button, Title, Wrapper } from './ConfirmOrder.Style'
 import { CoffeeSelected } from '../CoffeeSelected/CoffeeSelected'
 
 export const ConfirmOrder = () => {
@@ -20,6 +20,7 @@ export const ConfirmOrder = () => {
                     <h2>Total</h2>
                     <h2>R$ 33,20</h2>
                 </Title>
+                <Button>confirmar pedido</Button>
             </Wrapper>
         </React.Fragment>
     )

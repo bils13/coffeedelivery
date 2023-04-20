@@ -6,7 +6,7 @@ interface IHeader {
 }
 
 export const Header = styled(Headers)`
-    background-color: #FAFAFA;
+    background-color: #FFFFFF;
     max-width: 100vw;
     width: 100%;
     display: flex;
