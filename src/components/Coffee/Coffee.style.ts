@@ -1,50 +1,5 @@
 import styled from "styled-components";
 
-export const ListCoffee = styled.div`
-    display: flex;
-    align-items: center;
-    justify-content: center;
-`
-
-
-export const Coffee = styled.section`
-    margin-top: 2rem;
-    
-
-    > h3 {
-        font-family: 'Baloo 2', sans-serif;
-        font-size: 32px;
-        font-weight: 800;
-        color: #403937;
-        margin-bottom: 54px;
-        align-items: left;
-    }
-`
-
-export const Coffees = styled.div`
-    display: grid;
-    grid-template-columns: repeat(4, 256px);
-    row-gap: 2.5rem;
-    column-gap: 2rem;
-
-    @media only screen and (max-width: 600px) {
-        grid-template-columns: repeat(1, 1fr);
-    }
-
-    @media only screen and (min-width: 600px) {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    @media only screen and (min-width: 900px) {
-        grid-template-columns: repeat(3, 1fr);
-    }
-
-    @media only screen and (min-width: 1440px) {
-        grid-template-columns: repeat(4, 1fr);
-    }
-
-`
-
 export const CoffeeCard = styled.div`
     position: relative;
     background-color: #F3F2F2;

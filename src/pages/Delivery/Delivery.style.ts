@@ -40,16 +40,25 @@ export const Info = styled.div`
     position: relative;
     border-radius: 6px 36px 6px 36px;
     width: 526px;
+    box-sizing: border-box;
     gap: 2rem;
+    background: #ffffff;
+    background-clip: padding-box;
     margin-top: 2rem;
     border: 1px solid transparent;
+    border-radius: 7px 37px 7px 37px;
     
     &::before {
         content: "";
         position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
         inset: -1px;
         z-index: -1;
-        border-radius: 7px 37px 7px 37px;
+        margin: -1px;
+        border-radius: inherit;
         background: linear-gradient(102.89deg, #dbac2c 2.61%, #8047f8 98.76%);
     }
     

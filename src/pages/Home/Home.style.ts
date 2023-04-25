@@ -47,3 +47,49 @@ export const WrapperIcon = styled.div`
     align-items: center;
     justify-content: center;
 `
+
+export const ListCoffee = styled.div`
+    display: grid;
+    grid-template-columns: repeat(4, 256px);
+    row-gap: 2.5rem;
+    column-gap: 2rem;
+
+    @media only screen and (max-width: 600px) {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    @media only screen and (min-width: 600px) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media only screen and (min-width: 900px) {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    @media only screen and (min-width: 1440px) {
+        grid-template-columns: repeat(4, 1fr);
+    }
+`
+
+export const WrapperCoffe = styled.section`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2rem;
+`
+
+export const Coffees = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+
+    > h3 {
+        font-family: 'Baloo 2', sans-serif;
+        font-size: 32px;
+        font-weight: 800;
+        color: #403937;
+        margin-bottom: 54px;
+        align-items: left;
+    }
+`

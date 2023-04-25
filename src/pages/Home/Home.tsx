@@ -1,10 +1,11 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Header } from '../../components/Header/Header.style'
 import { BannerIntro } from '../../components/Banner/Banner.style'
 import { ShoppingCart } from '@phosphor-icons/react'
-import { Icon, Icons, WrapperIcon } from './Home.style'
+import { Coffees, Icon, Icons, ListCoffee, WrapperCoffe, WrapperIcon } from './Home.style'
 import Coffee from '../../assets/Coffee.svg'
 import { CoffeeList } from '../../components/Coffee/Coffee'
+import { coffee as CoffeObj } from '../../data/coffee'
 
 export const Home = () => {
     return (
@@ -43,7 +44,18 @@ export const Home = () => {
                 </section>
                 <img src={Coffee} alt='Coffee' />
             </BannerIntro>
-            <CoffeeList />
+        
+            <WrapperCoffe>
+                
+                <Coffees>
+                <h3>Nossos cafés</h3>
+                    <ListCoffee>
+                        {CoffeObj.map((coffee) => 
+                            <CoffeeList key={coffee.id} coffee={coffee} />
+                        )}
+                    </ListCoffee>
+                </Coffees>
+            </WrapperCoffe>
         </React.Fragment>
     )
 }

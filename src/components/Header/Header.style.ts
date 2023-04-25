@@ -19,6 +19,9 @@ export const Header = styled(Headers)`
         width: 100%;
         max-height: 40px;
         height: 100%;
+        &:hover {
+            cursor: pointer;
+        }
     }
     
 `
@@ -36,11 +39,15 @@ export const Location = styled.div `
     border-radius: 6px;
     gap: 4px;
 
+    &:hover {
+        cursor: not-allowed;
+    }
+
     > p {
         font-family: 'Roboto', sans-serif;
         font-weight: 400;
         font-size: 14px;
-         color: #4b2995;
+        color: #4b2995;
     }
 
      @media only screen and (max-width: 768px) {

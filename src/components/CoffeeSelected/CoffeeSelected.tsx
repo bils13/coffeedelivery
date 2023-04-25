@@ -2,28 +2,56 @@ import React from 'react'
 import { Amount, Amounts, Coffee, Line, Wrapper, WrapperAmount, WrapperTrash } from './CoffeeSelected.style'
 import Tradicional from '../../assets/coffees/tradicional.svg'
 import { Trash } from '@phosphor-icons/react'
+import { useCart } from '../../hooks/useCart'
+import { CartItem } from '../../context/Cart'
 
-export const CoffeeSelected = () => {
+interface CoffeeCartCardProps {
+    coffee: CartItem;
+}
+
+export function formatMoney(value: number) {
+    return value.toLocaleString("pt-BR", {
+      minimumFractionDigits: 2,
+    });
+}
+
+export const CoffeeSelected = ({ coffee }: CoffeeCartCardProps) => {
+    const { changeCartItemQuantity, removeCartItem } = useCart()
+
+    function handleIncrease() {
+        changeCartItemQuantity(coffee.id, 'increase')
+    }
+
+    function handleDecrease() {
+        coffee.quantity>0 && changeCartItemQuantity(coffee.id, 'decrease')
+    }
+
+    function handleRemove() {
+        removeCartItem(coffee.id)
+    }
+
+    let coffeePrice = coffee.price * coffee.quantity
+
     return(
         <React.Fragment>
             <Wrapper>
                 <Coffee>
                     <img src={Tradicional} alt='Café tradicional' />
                     <Amount>
-                        <h3>Expresso Tradicional</h3>
+                        <h3>{coffee.name}</h3>
                         <Amounts>
                             <WrapperAmount>
-                                <p>-</p>
-                                <h4>1</h4>
-                                <p>+</p>
+                                <p onClick={handleDecrease}>-</p>
+                                <h4>{coffee.quantity}</h4>
+                                <p onClick={handleIncrease}>+</p>
                             </WrapperAmount>
                             <WrapperTrash>
                                 <Trash size={14} color="#8047F8" />
-                                <h4>Remover</h4>
+                                <h4 onClick={handleRemove}>Remover</h4>
                             </WrapperTrash>
                         </Amounts>
                     </Amount>
-                    <h3>R$ 9,90</h3>
+                    <h3>R$ {formatMoney(coffeePrice)}</h3>
                 </Coffee>
                 <Line />
             </Wrapper>
