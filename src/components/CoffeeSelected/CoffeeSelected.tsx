@@ -31,12 +31,13 @@ export const CoffeeSelected = ({ coffee }: CoffeeCartCardProps) => {
     }
 
     let coffeePrice = coffee.price * coffee.quantity
+    let img = `../src/assets/${coffee.img}`
 
     return(
         <React.Fragment>
             <Wrapper>
                 <Coffee>
-                    <img src={Tradicional} alt='Café tradicional' />
+                    <img src={img} alt={coffee.name} />
                     <Amount>
                         <h3>{coffee.name}</h3>
                         <Amounts>
@@ -45,9 +46,9 @@ export const CoffeeSelected = ({ coffee }: CoffeeCartCardProps) => {
                                 <h4>{coffee.quantity}</h4>
                                 <p onClick={handleIncrease}>+</p>
                             </WrapperAmount>
-                            <WrapperTrash>
+                            <WrapperTrash onClick={handleRemove}>
                                 <Trash size={14} color="#8047F8" />
-                                <h4 onClick={handleRemove}>Remover</h4>
+                                <h4>Remover</h4>
                             </WrapperTrash>
                         </Amounts>
                     </Amount>
