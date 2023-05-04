@@ -31,7 +31,7 @@ export const CoffeeSelected = ({ coffee }: CoffeeCartCardProps) => {
     }
 
     let coffeePrice = coffee.price * coffee.quantity
-    let img = `../src/assets/${coffee.img}`
+    let img = `../assets/${coffee.img}`
 
     return(
         <React.Fragment>
