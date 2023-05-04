@@ -7,6 +7,8 @@ export interface CartItem {
     name: string;
     price: number,
     coffeesString?: string;
+    img: string;
+    desc: string;
 }
 
 interface CartContextType {
