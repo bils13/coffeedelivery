@@ -3,8 +3,27 @@ import { Icon, Info, Infos, Text, WrapperInfo, Wrapper, Image } from './Delivery
 import { CurrencyDollar, MapPin, Timer } from '@phosphor-icons/react'
 import { Header } from '../../components/Header/Header.style'
 import Ilustration from '../../assets/Delivery.svg'
+import { useLocation } from 'react-router-dom'
+
+interface AddressI {
+    cep: string,
+    address: string,
+    number: number,
+    complement: string,
+    bairro: string,
+    uf: string,
+    city: string,
+    pay: string
+}
+
+
+interface LocationState {
+    state: AddressI
+}
 
 export const Delivery = () => {
+    const { state } = useLocation() as unknown as LocationState
+    
     return (
         <React.Fragment>
             <Header />
@@ -18,8 +37,8 @@ export const Delivery = () => {
                                 <MapPin size={17} color="#FFFFFF" weight="fill" />
                             </Icon>
                             <Text>
-                                <label>Entrega em <span>Rua João Daniel Martinelli, 102</span></label>
-                                <p><span>Farropos - Porto Alegre, RS</span></p>
+                                <label>Entrega em <span>{state.address}, {state.number}</span></label>
+                                <p><span>{state.bairro} - {state.city}, {state.uf}</span></p>
                             </Text>
                         </Infos>
                         <Infos>
@@ -37,7 +56,7 @@ export const Delivery = () => {
                             </Icon>
                             <Text>
                                 <label>Pagamento na entrega</label>
-                                <p>Cartão de Crédito</p>
+                                <p>{state.pay}</p>
                             </Text>
                         </Infos>
                     </Info>

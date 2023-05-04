@@ -37,7 +37,7 @@ export const PaymentOptions = styled.div`
     gap: 12px;
 `
 
-export const Option = styled.h5`
+export const Option = styled.button`
     margin-top: 1rem;
     display: flex;
     align-items: center;
@@ -52,10 +52,15 @@ export const Option = styled.h5`
     text-transform: uppercase;
     color: #574F4D;
     background: #E6E5E5;
+    border: none;
     border-radius: 6px;
     
     &:hover {
         cursor: pointer;
         background-color: #c7c7c7;
+    }
+
+    .selected {
+        border: 1px solid red;
     }
 `

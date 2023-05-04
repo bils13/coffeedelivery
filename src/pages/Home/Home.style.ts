@@ -1,11 +1,13 @@
 import styled from "styled-components";
 
+interface PropsHome {
+    backgroundColor: string
+}
+
 export const Icons = styled.section`
     margin-top: 3rem;
     display: flex;
     flex-wrap: wrap;
-    width: 100%;
-    gap: 15px;
     align-items: center;
     justify-content: space-between;
 
@@ -15,10 +17,11 @@ export const Icons = styled.section`
 
 `
 
-
 export const Icon = styled.div`
     display: flex;
     align-items: center;
+    width: 50%;
+    margin-bottom: 15px;
 
     > p {
         font-family: 'Roboto';
@@ -39,9 +42,9 @@ export const Icon = styled.div`
 `
 
 export const WrapperIcon = styled.div`
-    background-color: #C47F17;
-    width: 40px;
-    height: 40px;
+    background-color: ${(props: PropsHome) => props.backgroundColor};
+    width: 30px;
+    height: 30px;
     border-radius: 100%;
     display: flex;
     align-items: center;
@@ -79,6 +82,7 @@ export const WrapperCoffe = styled.section`
 `
 
 export const Coffees = styled.div`
+    margin-top: 4rem;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
