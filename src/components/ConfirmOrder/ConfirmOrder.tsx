@@ -7,6 +7,11 @@ import { formatMoney } from '../CoffeeSelected/CoffeeSelected'
 export const ConfirmOrder = () => {
     const { cartItems, cartItemsTotal } = useCart()
     let totalPrice = cartItemsTotal + 3.5
+    const handleClick = (event: any) => {
+        if(cartItemsTotal<=0) {
+            event.currentTarget.disabled = true;       
+        }
+    }
     return (
         <React.Fragment>
             <Wrapper>
@@ -27,7 +32,7 @@ export const ConfirmOrder = () => {
                     <h2>Total</h2>
                     <h2>R$ {formatMoney(totalPrice)}</h2>
                 </Title>
-                <Button>confirmar pedido</Button>
+                <Button type='submit' style={cartItemsTotal<=0 ? {cursor: 'not-allowed', backgroundColor: '#f5d98c'} : {}} onClick={handleClick}>confirmar pedido</Button>
             </Wrapper>
         </React.Fragment>
     )

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 
-export const YourOrder = styled.div`
+export const YourOrder = styled.form`
     display: flex;
     justify-content: center;
     gap: 1.5rem;

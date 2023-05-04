@@ -9,13 +9,13 @@ export const Router = () => {
     return (
         <BrowserRouter>
             <CartContextProvider>
-                <Routes>
-                    <Route>
-                        <Route path="/" element={<Home />} />
-                        <Route path="/order" element={<Order />} />
-                        <Route path="/delivery" element={<Delivery />} />
-                    </Route>
-                </Routes>
+                    <Routes>
+                        <Route>
+                            <Route path="/" element={<Home />} />
+                            <Route path="/order" element={<Order />} />
+                            <Route path="/delivery" element={<Delivery />} />
+                        </Route>
+                    </Routes>
             </CartContextProvider>
         </BrowserRouter>
     )

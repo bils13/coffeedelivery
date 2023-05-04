@@ -1,10 +1,14 @@
 import styled from "styled-components";
 
-export const Form = styled.form`
+export const Form = styled.div`
     background-color: #F3F2F2;
     border-radius: 6px;
     width: 640px;
     padding: 40px;
+
+    .border {
+        border: 1px solid red;
+    }
 `
 
 export const Address = styled.div`

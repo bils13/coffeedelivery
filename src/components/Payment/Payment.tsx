@@ -1,8 +1,8 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Option, Pay, PaymentOptions, Title, Wrapper } from './Payment.style'
 import { Bank, CreditCard, CurrencyDollar, Money } from '@phosphor-icons/react'
 
-export const Payment = () => {
+export const Payment = ({ handleClick }: any) => { 
     return (
         <React.Fragment>
             <Wrapper>
@@ -14,14 +14,14 @@ export const Payment = () => {
                     </Title>
                 </Pay>
                 <PaymentOptions>
-                    <Option>
+                    <Option value='Cartão de Crédito' onClick={handleClick}>
                         <CreditCard size={18} color="#8047F8" />
                         Cartão de crédito</Option>
-                    <Option>
-                        <Bank size={18} color="#8047F8" />
+                    <Option value='Cartão de Débito' onClick={handleClick}>
+                        <Bank size={18} color="#8047F8"/>
                         Cartão de débito</Option>
-                    <Option>
-                        <Money size={18} color="#8047F8" />
+                    <Option value='Dinheiro' onClick={handleClick}>
+                        <Money size={18} color="#8047F8"/>
                         Dinheiro</Option>
                 </PaymentOptions>
             </Wrapper>

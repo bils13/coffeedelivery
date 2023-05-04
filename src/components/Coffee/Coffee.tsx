@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react'
 import { Amount, Cart, CoffeeBuy, CoffeeCard, CoffeeTag, Wrapper } from './Coffee.style'
 import { ShoppingCart } from '@phosphor-icons/react'
 import { useCart } from '../../hooks/useCart'
+import { formatMoney } from '../CoffeeSelected/CoffeeSelected'
 
 export interface Coffee {
     id: number;
@@ -49,7 +50,7 @@ export const CoffeeList = ({ coffee }: CoffeeProps) => {
                 <CoffeeBuy>
                     <h4>
                         <span>R$</span>
-                        {coffee.price}  
+                        {formatMoney(coffee.price)}  
                     </h4>
                     <Amount>
                         <Wrapper>

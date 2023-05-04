@@ -1,12 +1,11 @@
 import React from 'react'
 import { Address, Title, Form, Input, WrapperInput } from './Form.style'
 import { MapPinLine } from '@phosphor-icons/react'
-import { useForm } from 'react-hook-form'
-import { yupResolver } from '@hookform/resolvers/yup';
+import { useFormContext } from 'react-hook-form'
 import * as yup from 'yup';
 
-const schema = yup.object({
-    cep: yup.number().positive().required(),
+export const schema = yup.object({
+    cep: yup.string().required().matches(/\d{5}-\d{3}/),
     address: yup.string().required(),
     number: yup.number().positive().required(),
     complement: yup.string(),
@@ -16,11 +15,10 @@ const schema = yup.object({
 })
 type FormData = yup.InferType<typeof schema>;
 
-export const FormOrder = () => {
-    const { register, handleSubmit, formState: { errors } } = useForm<FormData>({
-        resolver: yupResolver(schema)
-    })
 
+export const FormOrder = () => {
+    const { register, formState:{ errors } } = useFormContext<FormData>()
+    
     return (
         <Form>
             <Address>
@@ -29,17 +27,16 @@ export const FormOrder = () => {
                     <h4>Informe o endereço onde deseja receber seu pedido</h4>
                 </Title>
             </Address>
-            <Input width='200px'type='text' placeholder='CEP' {...register('cep')} />
-            <p>{errors.cep?.message}</p>
-            <Input width='100%'type='text' placeholder='Rua' {...register('address')}/>
+            <Input width='200px'type='text' placeholder='CEP' {...register('cep')} className={errors?.cep ? 'border' : ''}/>
+            <Input width='100%'type='text' placeholder='Rua' {...register('address')} className={errors?.address ? 'border' : ''}/>
             <WrapperInput>
-                <Input width='200px' type='number' placeholder='Número' {...register('number')}/>
+                <Input width='200px' type='number' placeholder='Número' {...register('number')} className={errors?.number ? 'border' : ''}/>
                 <Input width='348px'type='text' placeholder='Complemento' {...register('complement')}/>
             </WrapperInput>
             <WrapperInput>
-                <Input width='200px'type='text' placeholder='Bairro' {...register('bairro')}/>
-                <Input width='276px'type='text' placeholder='Cidade' {...register('city')}/>
-                <Input width='60px'type='text' placeholder='UF' {...register('uf')}/>
+                <Input width='200px'type='text' placeholder='Bairro' {...register('bairro')} className={errors?.bairro ? 'border' : ''}/>
+                <Input width='276px'type='text' placeholder='Cidade' {...register('city')} className={errors?.city ? 'border' : ''}/>
+                <Input width='60px'type='text' placeholder='UF' {...register('uf')} className={errors?.uf ? 'border' : ''}/>
             </WrapperInput>
         </Form>
     )

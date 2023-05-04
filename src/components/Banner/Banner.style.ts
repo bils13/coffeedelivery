@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Background from '../../assets/Background.png'
 
 interface IBanner {
     url: string
@@ -17,13 +18,18 @@ export const Banner = styled.div`
 export const BannerIntro = styled.div`
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: center;
+    gap: 50px;
     padding: 50px;
+    background-image: url(${Background});
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 
     > section {
         display: flex;
         flex-direction: column;
-        max-width: 588px;
+        max-width: 650px;
 
         > h1 {
             font-family: 'Baloo 2', sans-serif;
