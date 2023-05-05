@@ -36,7 +36,7 @@ export const CoffeeSelected = ({ coffee }: CoffeeCartCardProps) => {
         <React.Fragment>
             <Wrapper>
                 <Coffee>
-                    <img src={Object.values(coffee.img)} alt={coffee.name} />
+                    <img src={`src/assets${coffee.img}`} alt={coffee.name} />
                     <Amount>
                         <h3>{coffee.name}</h3>
                         <Amounts>
