@@ -1,6 +1,6 @@
 import React from 'react'
 import { Amount, Amounts, Coffee, Line, Wrapper, WrapperAmount, WrapperTrash } from './CoffeeSelected.style'
-import Tradicional from '../../assets/coffees/tradicional.svg'
+// import Tradicional from '../../assets/coffees/tradicional.svg'
 import { Trash } from '@phosphor-icons/react'
 import { useCart } from '../../hooks/useCart'
 import { CartItem } from '../../context/Cart'
@@ -36,7 +36,7 @@ export const CoffeeSelected = ({ coffee }: CoffeeCartCardProps) => {
         <React.Fragment>
             <Wrapper>
                 <Coffee>
-                    <img src={`./src/assets/${coffee.img}`} alt={coffee.name} />
+                    <img src={`./assets/${coffee.img}`} alt={coffee.name} />
                     <Amount>
                         <h3>{coffee.name}</h3>
                         <Amounts>
