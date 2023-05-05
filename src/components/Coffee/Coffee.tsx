@@ -42,7 +42,7 @@ export const CoffeeList = ({ coffee }: CoffeeProps) => {
     return (
         <React.Fragment>
             <CoffeeCard>
-                <img src={`src/assets/${coffee.img}`} alt={coffee.name}/>
+                <img src={`/src/assets/${coffee.img}`} alt={coffee.name}/>
                 <CoffeeTag>
                     {coffee.tag.map((tag) => <label>{tag}</label>)}
                     
