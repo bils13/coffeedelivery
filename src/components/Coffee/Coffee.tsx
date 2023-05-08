@@ -9,7 +9,7 @@ export interface Coffee {
     tag: string[];
     name: string;
     desc: string;
-    img: string;
+    img: any;
     price: number;
   }
   
@@ -38,11 +38,14 @@ export const CoffeeList = ({ coffee }: CoffeeProps) => {
         }
         addCoffeeToCart(coffeeToAdd)
     }
-    console.log(coffee.img)
+
+    let coffeUrlObject = Object.values(coffee.img)
+    let coffeeUrlString = JSON.stringify(coffeUrlObject)
+    let coffeeUrlRe = coffeeUrlString.replace(/[\([{"})\]]/g, '')
     return (
         <React.Fragment>
             <CoffeeCard>
-                <img src={`./assets/${coffee.img}`} alt={coffee.name}/>
+                <img src={`./${coffeeUrlRe}`} alt={coffee.name}/>
                 <CoffeeTag>
                     {coffee.tag.map((tag) => <label>{tag}</label>)}
                     
